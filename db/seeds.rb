@@ -7,6 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
 Cocktail.destroy_all
+Ingredient.destroy_all
 
 cocktails = [
   {
@@ -94,5 +95,9 @@ cocktails = [
     picture: "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-last-word.jpg"
   }
 ]
+
+ingredients = %w(lemon ice 'mint leaves' redbull jagermeister sugar tonic gin rhum)
+ingredients.each { |ingredient| Ingredient.create(name: ingredient) }
+
 
 cocktails.each { |cocktail| Cocktail.create(cocktail) }
