@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 # This file should contain all the record creation needed to seed the database with its default values.
 # The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
 #
@@ -95,9 +96,6 @@ cocktails = [
     picture: "http://www.seriouseats.com/images/2015/03/20150323-cocktails-vicky-wasik-last-word.jpg"
   }
 ]
-
 ingredients = %w(lemon ice mint leaves redbull jagermeister sugar tonic gin rhum)
 ingredients.each { |ingredient| Ingredient.create(name: ingredient) }
-
-
 cocktails.each { |cocktail| Cocktail.create(cocktail) }

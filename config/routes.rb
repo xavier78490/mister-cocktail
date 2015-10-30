@@ -1,6 +1,14 @@
 Rails.application.routes.draw do
-  resources :cocktails, only: [:show, :index, :new, :create]
+  resources :cocktails, only: [:show, :index, :new, :create] do
+    resources :doses, only: [:new, :create, :show]
+  end
+  resources :doses, only: [:destroy]
+
   root "cocktails#index"
+
+  # On veut l'index de cocktail
+  # On veut les doses -> new/create, destroy
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
